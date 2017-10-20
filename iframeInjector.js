@@ -1214,7 +1214,17 @@ function buildItem(id, type, length, src, preview, link, seen, time){
             };
 }
 
-var initDemo = function(storyIdx){
+var timeIndex = 0;
+var shifts = [35, 60, 60*3, 60*60*2, 60*60*25, 60*60*24*4, 60*60*24*10];
+var timestamp = function() {
+    var now = new Date();
+    var shift = shifts[timeIndex++] || 0;
+    var date = new Date( now - shift*1000);
+
+    return date.getTime() / 1000;
+};
+
+var initDemo = function(storyIdx, storiesList){
 	var header = document.getElementById("header");
 	var skin = location.href.split('skin=')[1];
 	
@@ -1255,16 +1265,6 @@ var initDemo = function(storyIdx){
             'cubeEffect': false
 		}
 	};
-	
-	var timeIndex = 0;
-	var shifts = [35, 60, 60*3, 60*60*2, 60*60*25, 60*60*24*4, 60*60*24*10];
-	var timestamp = function() {
-	    var now = new Date();
-	    var shift = shifts[timeIndex++] || 0;
-	    var date = new Date( now - shift*1000);
-
-	    return date.getTime() / 1000;
-	};
 
     var storiesId = "stories" + storyIdx;
 	var stories = new Zuck(storiesId, {
@@ -1275,62 +1275,7 @@ var initDemo = function(storyIdx){
 		list: skins[skin]['list'],
         cubeEffect: skins[skin]['cubeEffect'],
 		localStorage: true,
-		stories: [
-			{
-				id: "ramon",
-				photo: "https://avatars1.githubusercontent.com/u/2271175?v=3&s=460",
-				name: "Ramon",
-				link: "https://ramon.codes",
-				lastUpdated: timestamp(),
-				items: [
-					buildItem("ramon-1", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", '', false, timestamp()),
-					buildItem("ramon-2", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", 'https://ramon.codes', false, timestamp()),
-					buildItem("ramon-3", "video", 0, "https://growthhackday.blob.core.windows.net/asset-90912b5f-066e-41fb-bdf3-34fbc03842c1/1479932728445-v0ch3x.mp4?sv=2015-07-08&sr=c&si=bbe1f495-08a0-4a58-8010-4026c67cb264&sig=or22AYoxe1aX1WMMYsked%2FY8%2FrDKexEZQpacNcyjAeE%3D&st=2017-10-20T21%3A10%3A21Z&se=2117-10-20T21%3A10%3A21Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", '', false, 1504023497)
-				]
-			},
-			{
-				id: "gorillaz",
-				photo: "https://lh3.googleusercontent.com/xYFz6B9FHMQq7fDOI_MA61gf0sNdzGBbdR7-mZ7i4rEVvE_N-kZEY_A4eP74Imcf8Sq3FYxAgd4eJA=w200",
-				name: "Gorillaz",
-				link: "",
-				lastUpdated: timestamp(),
-				items: [
-					buildItem("gorillaz-1", "video", 0, "https://instagram.frao1-1.fna.fbcdn.net/t50.2886-16/17886251_1128605603951544_572796556789415936_n.mp4", "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
-					buildItem("gorillaz-2", "photo", 3, "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:large","https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
-				]
-			},
-			{
-				id: "ladygaga",
-				photo: "https://lh3.googleusercontent.com/VkANYSL1HOzINPSnzBJRM879b302ShsRwLoKD7mLezgTLvlpHPm_dIVop7mkAQfepze6O5N8rw8l4yM=w200",
-				name: "Lady Gaga",
-				link: "",
-				lastUpdated: timestamp(),
-				items: [
-					buildItem("ladygaga-1", "photo", 5, "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:large", "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:small", '', false, timestamp()),
-					buildItem("ladygaga-2", "photo", 3, "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:large", "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:small", 'http://ladygaga.com', false, timestamp()),
-				]
-			},
-			{
-				id: "starboy",
-				photo: "https://lh3.googleusercontent.com/nMxfllzaAmaCCZJEMiKe2EARjyUNItQ-mdgAq6he-LWXwkIWbiiBIHyC3rGiqDu6fgyVK6NnjcgueA=w200",
-				name: "The Weeknd",
-				link: "",
-				lastUpdated: timestamp(),
-				items: [
-					buildItem("starboy-1", "photo", 5, "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:large", "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:small", '', false, timestamp())
-				]
-			},
-			{
-				id: "qotsa",
-				photo: "https://lh3.googleusercontent.com/nE4grkY8s88P_1mFFA06mGCNshhqtIz4C4y2dV7AZbm0360zopRKDMCYtUHR0uQR2DAfYMRZdA=s180-p-e100-rwu-v1",
-				name: "QOTSA",
-				link: "",
-				lastUpdated: timestamp(),
-				items: [
-					buildItem("qotsa-1", "photo", 10, "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:large", "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:small", '', false, timestamp())
-				]
-			}
-		]
+		stories: storiesList
 	});
     
     var el = document.querySelectorAll('#skin option');
@@ -1370,22 +1315,419 @@ var idxArray = [0, 1, 2];
 // await demo(0);
 // await demo(1);
 // await demo(2)
+var defaultList = [
+            {
+                id: "ramon",
+                photo: "https://avatars1.githubusercontent.com/u/2271175?v=3&s=460",
+                name: "Ramon",
+                link: "https://ramon.codes",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ramon-1", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", '', false, timestamp()),
+                    buildItem("ramon-2", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", 'https://ramon.codes', false, timestamp()),
+                    buildItem("ramon-3", "video", 0, "https://growthhackday.blob.core.windows.net/asset-90912b5f-066e-41fb-bdf3-34fbc03842c1/1479932728445-v0ch3x.mp4?sv=2015-07-08&sr=c&si=bbe1f495-08a0-4a58-8010-4026c67cb264&sig=or22AYoxe1aX1WMMYsked%2FY8%2FrDKexEZQpacNcyjAeE%3D&st=2017-10-20T21%3A10%3A21Z&se=2117-10-20T21%3A10%3A21Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", '', false, 1504023497)
+                ]
+            },
+            {
+                id: "gorillaz",
+                photo: "https://lh3.googleusercontent.com/xYFz6B9FHMQq7fDOI_MA61gf0sNdzGBbdR7-mZ7i4rEVvE_N-kZEY_A4eP74Imcf8Sq3FYxAgd4eJA=w200",
+                name: "Gorillaz",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("gorillaz-1", "video", 0, "https://instagram.frao1-1.fna.fbcdn.net/t50.2886-16/17886251_1128605603951544_572796556789415936_n.mp4", "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                    buildItem("gorillaz-2", "photo", 3, "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:large","https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                ]
+            },
+            {
+                id: "ladygaga",
+                photo: "https://lh3.googleusercontent.com/VkANYSL1HOzINPSnzBJRM879b302ShsRwLoKD7mLezgTLvlpHPm_dIVop7mkAQfepze6O5N8rw8l4yM=w200",
+                name: "Lady Gaga",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ladygaga-1", "photo", 5, "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:large", "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:small", '', false, timestamp()),
+                    buildItem("ladygaga-2", "photo", 3, "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:large", "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:small", 'http://ladygaga.com', false, timestamp()),
+                ]
+            },
+            {
+                id: "starboy",
+                photo: "https://lh3.googleusercontent.com/nMxfllzaAmaCCZJEMiKe2EARjyUNItQ-mdgAq6he-LWXwkIWbiiBIHyC3rGiqDu6fgyVK6NnjcgueA=w200",
+                name: "The Weeknd",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("starboy-1", "photo", 5, "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:large", "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:small", '', false, timestamp())
+                ]
+            },
+            {
+                id: "qotsa",
+                photo: "https://lh3.googleusercontent.com/nE4grkY8s88P_1mFFA06mGCNshhqtIz4C4y2dV7AZbm0360zopRKDMCYtUHR0uQR2DAfYMRZdA=s180-p-e100-rwu-v1",
+                name: "QOTSA",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("qotsa-1", "photo", 10, "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:large", "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:small", '', false, timestamp())
+                ]
+            }
+        ]
 
+var eventsList = [
+            {
+                id: "ramon",
+                photo: "https://avatars1.githubusercontent.com/u/2271175?v=3&s=460",
+                name: "Ramon",
+                link: "https://ramon.codes",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ramon-1", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", '', false, timestamp()),
+                    buildItem("ramon-2", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", 'https://ramon.codes', false, timestamp()),
+                    buildItem("ramon-3", "video", 0, "https://growthhackday.blob.core.windows.net/asset-90912b5f-066e-41fb-bdf3-34fbc03842c1/1479932728445-v0ch3x.mp4?sv=2015-07-08&sr=c&si=bbe1f495-08a0-4a58-8010-4026c67cb264&sig=or22AYoxe1aX1WMMYsked%2FY8%2FrDKexEZQpacNcyjAeE%3D&st=2017-10-20T21%3A10%3A21Z&se=2117-10-20T21%3A10%3A21Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", '', false, 1504023497)
+                ]
+            },
+            {
+                id: "gorillaz",
+                photo: "https://lh3.googleusercontent.com/xYFz6B9FHMQq7fDOI_MA61gf0sNdzGBbdR7-mZ7i4rEVvE_N-kZEY_A4eP74Imcf8Sq3FYxAgd4eJA=w200",
+                name: "Gorillaz",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("gorillaz-1", "video", 0, "https://instagram.frao1-1.fna.fbcdn.net/t50.2886-16/17886251_1128605603951544_572796556789415936_n.mp4", "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                    buildItem("gorillaz-2", "photo", 3, "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:large","https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                ]
+            },
+            {
+                id: "ladygaga",
+                photo: "https://lh3.googleusercontent.com/VkANYSL1HOzINPSnzBJRM879b302ShsRwLoKD7mLezgTLvlpHPm_dIVop7mkAQfepze6O5N8rw8l4yM=w200",
+                name: "Lady Gaga",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ladygaga-1", "photo", 5, "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:large", "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:small", '', false, timestamp()),
+                    buildItem("ladygaga-2", "photo", 3, "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:large", "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:small", 'http://ladygaga.com', false, timestamp()),
+                ]
+            },
+            {
+                id: "starboy",
+                photo: "https://lh3.googleusercontent.com/nMxfllzaAmaCCZJEMiKe2EARjyUNItQ-mdgAq6he-LWXwkIWbiiBIHyC3rGiqDu6fgyVK6NnjcgueA=w200",
+                name: "The Weeknd",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("starboy-1", "photo", 5, "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:large", "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:small", '', false, timestamp())
+                ]
+            },
+            {
+                id: "qotsa",
+                photo: "https://lh3.googleusercontent.com/nE4grkY8s88P_1mFFA06mGCNshhqtIz4C4y2dV7AZbm0360zopRKDMCYtUHR0uQR2DAfYMRZdA=s180-p-e100-rwu-v1",
+                name: "QOTSA",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("qotsa-1", "photo", 10, "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:large", "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:small", '', false, timestamp())
+                ]
+            }
+        ]
+
+var companiesList = [
+            {
+                id: "ramon",
+                photo: "https://avatars1.githubusercontent.com/u/2271175?v=3&s=460",
+                name: "Ramon",
+                link: "https://ramon.codes",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ramon-1", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", '', false, timestamp()),
+                    buildItem("ramon-2", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", 'https://ramon.codes', false, timestamp()),
+                    buildItem("ramon-3", "video", 0, "https://growthhackday.blob.core.windows.net/asset-90912b5f-066e-41fb-bdf3-34fbc03842c1/1479932728445-v0ch3x.mp4?sv=2015-07-08&sr=c&si=bbe1f495-08a0-4a58-8010-4026c67cb264&sig=or22AYoxe1aX1WMMYsked%2FY8%2FrDKexEZQpacNcyjAeE%3D&st=2017-10-20T21%3A10%3A21Z&se=2117-10-20T21%3A10%3A21Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", '', false, 1504023497)
+                ]
+            },
+            {
+                id: "gorillaz",
+                photo: "https://lh3.googleusercontent.com/xYFz6B9FHMQq7fDOI_MA61gf0sNdzGBbdR7-mZ7i4rEVvE_N-kZEY_A4eP74Imcf8Sq3FYxAgd4eJA=w200",
+                name: "Gorillaz",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("gorillaz-1", "video", 0, "https://instagram.frao1-1.fna.fbcdn.net/t50.2886-16/17886251_1128605603951544_572796556789415936_n.mp4", "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                    buildItem("gorillaz-2", "photo", 3, "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:large","https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                ]
+            },
+            {
+                id: "ladygaga",
+                photo: "https://lh3.googleusercontent.com/VkANYSL1HOzINPSnzBJRM879b302ShsRwLoKD7mLezgTLvlpHPm_dIVop7mkAQfepze6O5N8rw8l4yM=w200",
+                name: "Lady Gaga",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ladygaga-1", "photo", 5, "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:large", "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:small", '', false, timestamp()),
+                    buildItem("ladygaga-2", "photo", 3, "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:large", "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:small", 'http://ladygaga.com', false, timestamp()),
+                ]
+            },
+            {
+                id: "starboy",
+                photo: "https://lh3.googleusercontent.com/nMxfllzaAmaCCZJEMiKe2EARjyUNItQ-mdgAq6he-LWXwkIWbiiBIHyC3rGiqDu6fgyVK6NnjcgueA=w200",
+                name: "The Weeknd",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("starboy-1", "photo", 5, "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:large", "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:small", '', false, timestamp())
+                ]
+            },
+            {
+                id: "qotsa",
+                photo: "https://lh3.googleusercontent.com/nE4grkY8s88P_1mFFA06mGCNshhqtIz4C4y2dV7AZbm0360zopRKDMCYtUHR0uQR2DAfYMRZdA=s180-p-e100-rwu-v1",
+                name: "QOTSA",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("qotsa-1", "photo", 10, "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:large", "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:small", '', false, timestamp())
+                ]
+            }
+        ]
+
+var trendingList = [
+            {
+                id: "ramon",
+                photo: "https://avatars1.githubusercontent.com/u/2271175?v=3&s=460",
+                name: "Ramon",
+                link: "https://ramon.codes",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ramon-1", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", '', false, timestamp()),
+                    buildItem("ramon-2", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", 'https://ramon.codes', false, timestamp()),
+                    buildItem("ramon-3", "video", 0, "https://growthhackday.blob.core.windows.net/asset-90912b5f-066e-41fb-bdf3-34fbc03842c1/1479932728445-v0ch3x.mp4?sv=2015-07-08&sr=c&si=bbe1f495-08a0-4a58-8010-4026c67cb264&sig=or22AYoxe1aX1WMMYsked%2FY8%2FrDKexEZQpacNcyjAeE%3D&st=2017-10-20T21%3A10%3A21Z&se=2117-10-20T21%3A10%3A21Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", '', false, 1504023497)
+                ]
+            },
+            {
+                id: "gorillaz",
+                photo: "https://lh3.googleusercontent.com/xYFz6B9FHMQq7fDOI_MA61gf0sNdzGBbdR7-mZ7i4rEVvE_N-kZEY_A4eP74Imcf8Sq3FYxAgd4eJA=w200",
+                name: "Gorillaz",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("gorillaz-1", "video", 0, "https://instagram.frao1-1.fna.fbcdn.net/t50.2886-16/17886251_1128605603951544_572796556789415936_n.mp4", "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                    buildItem("gorillaz-2", "photo", 3, "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:large","https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                ]
+            },
+            {
+                id: "ladygaga",
+                photo: "https://lh3.googleusercontent.com/VkANYSL1HOzINPSnzBJRM879b302ShsRwLoKD7mLezgTLvlpHPm_dIVop7mkAQfepze6O5N8rw8l4yM=w200",
+                name: "Lady Gaga",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ladygaga-1", "photo", 5, "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:large", "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:small", '', false, timestamp()),
+                    buildItem("ladygaga-2", "photo", 3, "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:large", "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:small", 'http://ladygaga.com', false, timestamp()),
+                ]
+            },
+            {
+                id: "starboy",
+                photo: "https://lh3.googleusercontent.com/nMxfllzaAmaCCZJEMiKe2EARjyUNItQ-mdgAq6he-LWXwkIWbiiBIHyC3rGiqDu6fgyVK6NnjcgueA=w200",
+                name: "The Weeknd",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("starboy-1", "photo", 5, "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:large", "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:small", '', false, timestamp())
+                ]
+            },
+            {
+                id: "qotsa",
+                photo: "https://lh3.googleusercontent.com/nE4grkY8s88P_1mFFA06mGCNshhqtIz4C4y2dV7AZbm0360zopRKDMCYtUHR0uQR2DAfYMRZdA=s180-p-e100-rwu-v1",
+                name: "QOTSA",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("qotsa-1", "photo", 10, "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:large", "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:small", '', false, timestamp())
+                ]
+            }
+        ]
+
+var influencersList = [
+            {
+                id: "ramon",
+                photo: "https://avatars1.githubusercontent.com/u/2271175?v=3&s=460",
+                name: "Ramon",
+                link: "https://ramon.codes",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ramon-1", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", '', false, timestamp()),
+                    buildItem("ramon-2", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", 'https://ramon.codes', false, timestamp()),
+                    buildItem("ramon-3", "video", 0, "https://growthhackday.blob.core.windows.net/asset-90912b5f-066e-41fb-bdf3-34fbc03842c1/1479932728445-v0ch3x.mp4?sv=2015-07-08&sr=c&si=bbe1f495-08a0-4a58-8010-4026c67cb264&sig=or22AYoxe1aX1WMMYsked%2FY8%2FrDKexEZQpacNcyjAeE%3D&st=2017-10-20T21%3A10%3A21Z&se=2117-10-20T21%3A10%3A21Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", '', false, 1504023497)
+                ]
+            },
+            {
+                id: "gorillaz",
+                photo: "https://lh3.googleusercontent.com/xYFz6B9FHMQq7fDOI_MA61gf0sNdzGBbdR7-mZ7i4rEVvE_N-kZEY_A4eP74Imcf8Sq3FYxAgd4eJA=w200",
+                name: "Gorillaz",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("gorillaz-1", "video", 0, "https://instagram.frao1-1.fna.fbcdn.net/t50.2886-16/17886251_1128605603951544_572796556789415936_n.mp4", "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                    buildItem("gorillaz-2", "photo", 3, "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:large","https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                ]
+            },
+            {
+                id: "ladygaga",
+                photo: "https://lh3.googleusercontent.com/VkANYSL1HOzINPSnzBJRM879b302ShsRwLoKD7mLezgTLvlpHPm_dIVop7mkAQfepze6O5N8rw8l4yM=w200",
+                name: "Lady Gaga",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ladygaga-1", "photo", 5, "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:large", "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:small", '', false, timestamp()),
+                    buildItem("ladygaga-2", "photo", 3, "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:large", "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:small", 'http://ladygaga.com', false, timestamp()),
+                ]
+            },
+            {
+                id: "starboy",
+                photo: "https://lh3.googleusercontent.com/nMxfllzaAmaCCZJEMiKe2EARjyUNItQ-mdgAq6he-LWXwkIWbiiBIHyC3rGiqDu6fgyVK6NnjcgueA=w200",
+                name: "The Weeknd",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("starboy-1", "photo", 5, "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:large", "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:small", '', false, timestamp())
+                ]
+            },
+            {
+                id: "qotsa",
+                photo: "https://lh3.googleusercontent.com/nE4grkY8s88P_1mFFA06mGCNshhqtIz4C4y2dV7AZbm0360zopRKDMCYtUHR0uQR2DAfYMRZdA=s180-p-e100-rwu-v1",
+                name: "QOTSA",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("qotsa-1", "photo", 10, "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:large", "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:small", '', false, timestamp())
+                ]
+            }
+        ]
+
+var newsList = [
+            {
+                id: "ramon",
+                photo: "https://avatars1.githubusercontent.com/u/2271175?v=3&s=460",
+                name: "Ramon",
+                link: "https://ramon.codes",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ramon-1", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", '', false, timestamp()),
+                    buildItem("ramon-2", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", 'https://ramon.codes', false, timestamp()),
+                    buildItem("ramon-3", "video", 0, "https://growthhackday.blob.core.windows.net/asset-90912b5f-066e-41fb-bdf3-34fbc03842c1/1479932728445-v0ch3x.mp4?sv=2015-07-08&sr=c&si=bbe1f495-08a0-4a58-8010-4026c67cb264&sig=or22AYoxe1aX1WMMYsked%2FY8%2FrDKexEZQpacNcyjAeE%3D&st=2017-10-20T21%3A10%3A21Z&se=2117-10-20T21%3A10%3A21Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", '', false, 1504023497)
+                ]
+            },
+            {
+                id: "gorillaz",
+                photo: "https://lh3.googleusercontent.com/xYFz6B9FHMQq7fDOI_MA61gf0sNdzGBbdR7-mZ7i4rEVvE_N-kZEY_A4eP74Imcf8Sq3FYxAgd4eJA=w200",
+                name: "Gorillaz",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("gorillaz-1", "video", 0, "https://instagram.frao1-1.fna.fbcdn.net/t50.2886-16/17886251_1128605603951544_572796556789415936_n.mp4", "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                    buildItem("gorillaz-2", "photo", 3, "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:large","https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                ]
+            },
+            {
+                id: "ladygaga",
+                photo: "https://lh3.googleusercontent.com/VkANYSL1HOzINPSnzBJRM879b302ShsRwLoKD7mLezgTLvlpHPm_dIVop7mkAQfepze6O5N8rw8l4yM=w200",
+                name: "Lady Gaga",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ladygaga-1", "photo", 5, "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:large", "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:small", '', false, timestamp()),
+                    buildItem("ladygaga-2", "photo", 3, "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:large", "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:small", 'http://ladygaga.com', false, timestamp()),
+                ]
+            },
+            {
+                id: "starboy",
+                photo: "https://lh3.googleusercontent.com/nMxfllzaAmaCCZJEMiKe2EARjyUNItQ-mdgAq6he-LWXwkIWbiiBIHyC3rGiqDu6fgyVK6NnjcgueA=w200",
+                name: "The Weeknd",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("starboy-1", "photo", 5, "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:large", "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:small", '', false, timestamp())
+                ]
+            },
+            {
+                id: "qotsa",
+                photo: "https://lh3.googleusercontent.com/nE4grkY8s88P_1mFFA06mGCNshhqtIz4C4y2dV7AZbm0360zopRKDMCYtUHR0uQR2DAfYMRZdA=s180-p-e100-rwu-v1",
+                name: "QOTSA",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("qotsa-1", "photo", 10, "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:large", "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:small", '', false, timestamp())
+                ]
+            }
+        ]
+
+var dayInTheLifeList = [
+            {
+                id: "ramon",
+                photo: "https://avatars1.githubusercontent.com/u/2271175?v=3&s=460",
+                name: "Ramon",
+                link: "https://ramon.codes",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ramon-1", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", '', false, timestamp()),
+                    buildItem("ramon-2", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", 'https://ramon.codes', false, timestamp()),
+                    buildItem("ramon-3", "video", 0, "https://growthhackday.blob.core.windows.net/asset-90912b5f-066e-41fb-bdf3-34fbc03842c1/1479932728445-v0ch3x.mp4?sv=2015-07-08&sr=c&si=bbe1f495-08a0-4a58-8010-4026c67cb264&sig=or22AYoxe1aX1WMMYsked%2FY8%2FrDKexEZQpacNcyjAeE%3D&st=2017-10-20T21%3A10%3A21Z&se=2117-10-20T21%3A10%3A21Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", '', false, 1504023497)
+                ]
+            },
+            {
+                id: "gorillaz",
+                photo: "https://lh3.googleusercontent.com/xYFz6B9FHMQq7fDOI_MA61gf0sNdzGBbdR7-mZ7i4rEVvE_N-kZEY_A4eP74Imcf8Sq3FYxAgd4eJA=w200",
+                name: "Gorillaz",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("gorillaz-1", "video", 0, "https://instagram.frao1-1.fna.fbcdn.net/t50.2886-16/17886251_1128605603951544_572796556789415936_n.mp4", "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                    buildItem("gorillaz-2", "photo", 3, "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:large","https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                ]
+            },
+            {
+                id: "ladygaga",
+                photo: "https://lh3.googleusercontent.com/VkANYSL1HOzINPSnzBJRM879b302ShsRwLoKD7mLezgTLvlpHPm_dIVop7mkAQfepze6O5N8rw8l4yM=w200",
+                name: "Lady Gaga",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("ladygaga-1", "photo", 5, "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:large", "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:small", '', false, timestamp()),
+                    buildItem("ladygaga-2", "photo", 3, "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:large", "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:small", 'http://ladygaga.com', false, timestamp()),
+                ]
+            },
+            {
+                id: "starboy",
+                photo: "https://lh3.googleusercontent.com/nMxfllzaAmaCCZJEMiKe2EARjyUNItQ-mdgAq6he-LWXwkIWbiiBIHyC3rGiqDu6fgyVK6NnjcgueA=w200",
+                name: "The Weeknd",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("starboy-1", "photo", 5, "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:large", "https://pbs.twimg.com/media/C6f-dTqVQAAiy1K.jpg:small", '', false, timestamp())
+                ]
+            },
+            {
+                id: "qotsa",
+                photo: "https://lh3.googleusercontent.com/nE4grkY8s88P_1mFFA06mGCNshhqtIz4C4y2dV7AZbm0360zopRKDMCYtUHR0uQR2DAfYMRZdA=s180-p-e100-rwu-v1",
+                name: "QOTSA",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("qotsa-1", "photo", 10, "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:large", "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:small", '', false, timestamp())
+                ]
+            }
+        ]
 
 async function demo() {
 	appendToFeed(0, "Events", "Latest events recommended for you");
-	initDemo(0);
+	initDemo(0, defaultList);
     console.log('first');
     await sleep(5000);
     appendToFeed(4, "Companies", "Company cultures that you might be interested in");
-    initDemo(4);
+    initDemo(4, defaultList);
     await sleep(5000);
     appendToFeed(7, "Influencers", "Learn from the best how to grow your career");
-	initDemo(7);
+	initDemo(7, defaultList);
     console.log('second');
     await sleep(5000);
     appendToFeed(11, "News", "What's going on around the world");
-	initDemo(11);
+	initDemo(11, defaultList);
   	console.log('third');
 }
 
