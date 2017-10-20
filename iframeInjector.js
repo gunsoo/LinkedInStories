@@ -1378,11 +1378,14 @@ async function demo() {
     console.log('first');
     await sleep(5000);
     appendToFeed(4, "Companies", "Company cultures that you might be interested in");
-	initDemo(4);
+    initDemo(4);
+    await sleep(5000);
+    appendToFeed(7, "Influencers", "Learn from the best how to grow your career");
+	initDemo(7);
     console.log('second');
     await sleep(5000);
-    appendToFeed(8, "News", "What's going on around the world");
-	initDemo(8);
+    appendToFeed(11, "News", "What's going on around the world");
+	initDemo(11);
   	console.log('third');
 }
 

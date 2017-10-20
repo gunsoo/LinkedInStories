@@ -11,7 +11,7 @@
     "content_scripts":          [ {
         "js":       [ "iframeInjector.js"],
         "matches":  [   "https://*/*"],
-        "css" : ["assets/zuck.js/zuck.css", "assets/zuck.js/skins/snapgram.css", "assets/zuck.js/skins/vemdezap.css", "assets/zuck.js/skins/facesnap.css", "assets/zuck.js/skins/snapssenger.css"]
+        "css" : ["assets/zuck-js/zuck.css", "assets/zuck-js/skins/snapgram.css", "assets/zuck-js/skins/vemdezap.css", "assets/zuck-js/skins/facesnap.css", "assets/zuck-js/skins/snapssenger.css"]
     } ],
 
   // "browser_action": {
