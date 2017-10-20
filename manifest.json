@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Getting started example",
+  "description": "This extension allows the user to change the background color of the current page.",
+  "version": "1.0",
+  "permissions": [
+    "activeTab"
+  ],
+  // https://stackoverflow.com/questions/15873904/adding-complex-html-using-a-chrome-content-script
+    "content_scripts":          [ {
+        "js":       [ "iframeInjector.js"],
+        "matches":  [   "https://*/*"],
+        "css" : ["assets/zuck.js/zuck.css", "assets/zuck.js/skins/snapgram.css", "assets/zuck.js/skins/vemdezap.css", "assets/zuck.js/skins/facesnap.css", "assets/zuck.js/skins/snapssenger.css"]
+    } ],
+
+  // "browser_action": {
+  //   "default_icon": "icon.png",
+  //   "default_popup": "zuck-test.html"
+  // },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "web_accessible_resources": ["zuck-test.html"]
+}
