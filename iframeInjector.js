@@ -11,7 +11,7 @@ console.log('length = ' + document.getElementsByClassName("feed-base-update__scr
 
 console.log(elems);
 
-function appendToFeed(index, title, subtitle) {
+function appendToFeed(index, title, subtitleString) {
 	var header = document.createElement("h3"),
         h4 = document.createElement("span");
         subtitle = document.createElement("span");
@@ -21,7 +21,7 @@ function appendToFeed(index, title, subtitle) {
     h4.style = "margin-bottom: 0px;"
     header.appendChild(h4);
 
-    subtitle.textContent = "" + subtitle;
+    subtitle.textContent = subtitleString;
     subtitle.className = "feed-base-post-meta Sans-13px-black-55%";
     subtitle.style = "padding-top: 0px;"
 
