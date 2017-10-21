@@ -1367,8 +1367,8 @@ var eventsList = [
             },
             {
                 id: "qotsa",
-                photo: "https://lh3.googleusercontent.com/nE4grkY8s88P_1mFFA06mGCNshhqtIz4C4y2dV7AZbm0360zopRKDMCYtUHR0uQR2DAfYMRZdA=s180-p-e100-rwu-v1",
-                name: "QOTSA",
+                photo: "https://yt3.ggpht.com/-3QNUjJoME-o/AAAAAAAAAAI/AAAAAAAAAAA/k_69ATpfQYA/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
+                name: "Hadoop",
                 link: "",
                 lastUpdated: timestamp(),
                 items: [
@@ -1380,7 +1380,7 @@ var eventsList = [
 var companiesList = [
             {
                 id: "ramon",
-                photo: "https://avatars1.githubusercontent.com/u/2271175?v=3&s=460",
+                photo: "https://lh3.googleusercontent.com/00APBMVQh3yraN704gKCeM63KzeQ-zHUi5wK6E9TjRQ26McyqYBt-zy__4i8GXDAfeys=w300",
                 name: "LinkedIn",
                 link: "https://ramon.codes",
                 lastUpdated: timestamp(),
@@ -1395,7 +1395,7 @@ var companiesList = [
             },
             {
                 id: "gorillaz",
-                photo: "https://lh3.googleusercontent.com/xYFz6B9FHMQq7fDOI_MA61gf0sNdzGBbdR7-mZ7i4rEVvE_N-kZEY_A4eP74Imcf8Sq3FYxAgd4eJA=w200",
+                photo: "https://blog.addthiscdn.com/wp-content/uploads/2015/11/logo-facebook.png",
                 name: "Facebook",
                 link: "",
                 lastUpdated: timestamp(),
@@ -1406,7 +1406,7 @@ var companiesList = [
             },
             {
                 id: "ladygaga",
-                photo: "https://lh3.googleusercontent.com/VkANYSL1HOzINPSnzBJRM879b302ShsRwLoKD7mLezgTLvlpHPm_dIVop7mkAQfepze6O5N8rw8l4yM=w200",
+                photo: "http://thebrainfever.com/images/apple-logos/Silhouette.png",
                 name: "Apple",
                 link: "",
                 lastUpdated: timestamp(),
@@ -1417,7 +1417,7 @@ var companiesList = [
             },
             {
                 id: "starboy",
-                photo: "https://lh3.googleusercontent.com/nMxfllzaAmaCCZJEMiKe2EARjyUNItQ-mdgAq6he-LWXwkIWbiiBIHyC3rGiqDu6fgyVK6NnjcgueA=w200",
+                photo: "https://www.blog.google/static/blog/images/google-200x200.7714256da16f.png",
                 name: "Google",
                 link: "",
                 lastUpdated: timestamp(),
@@ -1427,7 +1427,7 @@ var companiesList = [
             },
             {
                 id: "qotsa",
-                photo: "https://lh3.googleusercontent.com/nE4grkY8s88P_1mFFA06mGCNshhqtIz4C4y2dV7AZbm0360zopRKDMCYtUHR0uQR2DAfYMRZdA=s180-p-e100-rwu-v1",
+                photo: "https://pbs.twimg.com/profile_images/805119801660239872/_FtLaP8j.jpg",
                 name: "Spotify",
                 link: "",
                 lastUpdated: timestamp(),
