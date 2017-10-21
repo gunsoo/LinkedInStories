@@ -1319,7 +1319,7 @@ var idxArray = [0, 1, 2];
 var eventsList = [
             {
                 id: "growthhackday",
-                photo: "https://seeklogo.com/images/L/linkedin-icon-logo-05B2880899-seeklogo.com.png",
+                photo: "https://growthhackday.blob.core.windows.net/asset-3ab0a5fb-2e22-4b23-930a-aa27f3fe65de/Pasted%20image%20at%202017_10_20%2005_46%20PM.png?sv=2015-07-08&sr=c&si=63b1e973-f6c3-472b-968e-074273c225df&sig=UzPQ2BSjmyZN6p%2BFYNGjGwP7AyYqh7JYRf2XYTG%2BrAg%3D&st=2017-10-21T00%3A48%3A21Z&se=2117-10-21T00%3A48%3A21Z",
                 name: "GrowthHackDay",
                 link: "",
                 lastUpdated: timestamp(),
