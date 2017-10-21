@@ -1358,10 +1358,10 @@ var eventsList = [
                 link: "",
                 lastUpdated: timestamp(),
                 items: [
-                    buildItem("starboy-1", "photo", 5, "https://growthhackday.blob.core.windows.net/asset-65c44fb7-403b-481e-be80-7914ab52830d/wsj-1.mp4?sv=2015-07-08&sr=c&si=02419358-f3ca-421a-9f8f-3c347ca35245&sig=ZjgHZ8mau0QPHZNjwu5WjnU53INy%2BpCtTCz1nGOlI1s%3D&st=2017-10-20T23%3A39%3A17Z&se=2117-10-20T23%3A39%3A17Z", '', false, timestamp())
-                    buildItem("starboy-1", "photo", 5, "https://growthhackday.blob.core.windows.net/asset-1fba1c14-6f7b-49db-adb9-8e661ffd2fd8/wsj-2.jpeg?sv=2015-07-08&sr=c&si=b98882e4-9a86-47d3-9cc7-e7053ea56adb&sig=3m%2B2CqEGx%2BYeKfiUlJU9H5hpiUfmaSD%2B%2FyZEmlthgKI%3D&st=2017-10-20T23%3A45%3A20Z&se=2117-10-20T23%3A45%3A20Z", '', false, timestamp())
-                    buildItem("starboy-1", "photo", 5, "https://growthhackday.blob.core.windows.net/asset-7707424e-6948-4cd6-80de-890505e87452/wsj-3.jpeg?sv=2015-07-08&sr=c&si=7b478430-4bb6-4526-b331-2f15bae3fffb&sig=Rrw008dMzMibrBzT8%2FFlsnJDf9uKcUUv7yCmdSV32kM%3D&st=2017-10-20T23%3A45%3A14Z&se=2117-10-20T23%3A45%3A14Z", '', false, timestamp())
-                    buildItem("starboy-1", "photo", 5, "https://growthhackday.blob.core.windows.net/asset-d2bbf65f-bb13-43a8-8c4f-0e6cc97c7860/wsj-4.mp4?sv=2015-07-08&sr=c&si=ce4cbab2-1f82-42d5-897c-97be122cd631&sig=REGt0869VfWehyZfDCk%2BUil7POnE9qieagB4wxSIwro%3D&st=2017-10-20T23%3A45%3A25Z&se=2117-10-20T23%3A45%3A25Z", '', false, timestamp())
+                    buildItem("starboy-1", "video", 5, "https://growthhackday.blob.core.windows.net/asset-65c44fb7-403b-481e-be80-7914ab52830d/wsj-1.mp4?sv=2015-07-08&sr=c&si=02419358-f3ca-421a-9f8f-3c347ca35245&sig=ZjgHZ8mau0QPHZNjwu5WjnU53INy%2BpCtTCz1nGOlI1s%3D&st=2017-10-20T23%3A39%3A17Z&se=2117-10-20T23%3A39%3A17Z", '', false, timestamp()),
+                    buildItem("starboy-2", "photo", 5, "https://growthhackday.blob.core.windows.net/asset-1fba1c14-6f7b-49db-adb9-8e661ffd2fd8/wsj-2.jpeg?sv=2015-07-08&sr=c&si=b98882e4-9a86-47d3-9cc7-e7053ea56adb&sig=3m%2B2CqEGx%2BYeKfiUlJU9H5hpiUfmaSD%2B%2FyZEmlthgKI%3D&st=2017-10-20T23%3A45%3A20Z&se=2117-10-20T23%3A45%3A20Z", '', false, timestamp()),
+                    buildItem("starboy-3", "photo", 5, "https://growthhackday.blob.core.windows.net/asset-7707424e-6948-4cd6-80de-890505e87452/wsj-3.jpeg?sv=2015-07-08&sr=c&si=7b478430-4bb6-4526-b331-2f15bae3fffb&sig=Rrw008dMzMibrBzT8%2FFlsnJDf9uKcUUv7yCmdSV32kM%3D&st=2017-10-20T23%3A45%3A14Z&se=2117-10-20T23%3A45%3A14Z", '', false, timestamp()),
+                    buildItem("starboy-4", "video", 5, "https://growthhackday.blob.core.windows.net/asset-d2bbf65f-bb13-43a8-8c4f-0e6cc97c7860/wsj-4.mp4?sv=2015-07-08&sr=c&si=ce4cbab2-1f82-42d5-897c-97be122cd631&sig=REGt0869VfWehyZfDCk%2BUil7POnE9qieagB4wxSIwro%3D&st=2017-10-20T23%3A45%3A25Z&se=2117-10-20T23%3A45%3A25Z", '', false, timestamp())
 
                 ]
             },
