@@ -1320,10 +1320,11 @@ var eventsList = [
             {
                 id: "growthhackday",
                 photo: "https://growthhackday.blob.core.windows.net/asset-3ab0a5fb-2e22-4b23-930a-aa27f3fe65de/Pasted%20image%20at%202017_10_20%2005_46%20PM.png?sv=2015-07-08&sr=c&si=63b1e973-f6c3-472b-968e-074273c225df&sig=UzPQ2BSjmyZN6p%2BFYNGjGwP7AyYqh7JYRf2XYTG%2BrAg%3D&st=2017-10-21T00%3A48%3A21Z&se=2117-10-21T00%3A48%3A21Z",
-                name: "GrowthHackDay",
+                name: "HackDay",
                 link: "",
                 lastUpdated: timestamp(),
                 items: [
+                    buildItem("hackInProgress", "video", 3, "https://growthhackday.blob.core.windows.net/asset-d6b61428-f0d7-4a15-8ba6-e34bd50ffca3/Snapchat-96831976.mp4?sv=2015-07-08&sr=c&si=93ee87f7-76a9-42e8-96ad-1b431f9ee9c0&sig=q1gd499GEUxo6aASutBON%2BLFjAmiv7I5WxSePhYkVio%3D&st=2017-10-21T00%3A02%3A34Z&se=2117-10-21T00%3A02%3A34Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", '', false, timestamp()),
                     buildItem("hackInProgress", "video", 3, "https://growthhackday.blob.core.windows.net/asset-9b8f4090-4152-41a6-8d9c-b208600caf8d/IMG_0933_1920x1080_AACAudio_6790.mp4?sv=2015-07-08&sr=c&si=7cd82789-d6c3-455b-bd96-8c4e6b616fed&sig=7TZRGnDbwdApPIwN5Z3r9jtQrsqFgvk0vfsaC7OcJPs%3D&st=2017-10-20T23%3A50%3A55Z&se=2117-10-20T23%3A50%3A55Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", '', false, timestamp()),
                     buildItem("growthhackday-2", "photo", 3, "https://growthhackday.blob.core.windows.net/asset-3c39e9e9-47f6-4816-b866-63df854ed799/IMG_0926.JPG?sv=2015-07-08&sr=c&si=623fc7cf-cf7b-465b-b7a8-7b785c597506&sig=1hkm299XaC4IuJ0m1vrGvXxlgIE8vAXBLUQ02HE47DY%3D&st=2017-10-20T23%3A29%3A35Z&se=2117-10-20T23%3A29%3A35Z", "https://growthhackday.blob.core.windows.net/asset-26f0c3a3-b45c-4f17-8323-291d1dea26d5/IMG_0921_1920x1080_AACAudio_6790.mp4?sv=2015-07-08&sr=c&si=91e2d287-b125-4ff0-9a44-de793b707bd8&sig=Wy2zRVPnUdJ0%2BS9ocCumkAPz7JcMOpYMYMjdkUDSNQc%3D&st=2017-10-20T23%3A49%3A13Z&se=2117-10-20T23%3A49%3A13Z", 'https://ramon.codes', false, timestamp()),
                     buildItem("growthhackday-3", "video", 0, "https://growthhackday.blob.core.windows.net/asset-26f0c3a3-b45c-4f17-8323-291d1dea26d5/IMG_0921_1920x1080_AACAudio_6790.mp4?sv=2015-07-08&sr=c&si=91e2d287-b125-4ff0-9a44-de793b707bd8&sig=Wy2zRVPnUdJ0%2BS9ocCumkAPz7JcMOpYMYMjdkUDSNQc%3D&st=2017-10-20T23%3A49%3A13Z&se=2117-10-20T23%3A49%3A13Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", '', false, 1504023497)
@@ -1331,8 +1332,8 @@ var eventsList = [
             },
             {
                 id: "graceHopper",
-                photo: "http://etouches-appfiles.s3.amazonaws.com/html_file_uploads/be0c9bae1d21c886dc0452be56812091_anitab-ghc.png?response-content-disposition=inline%3Bfilename%3Dbe0c9bae1d21c886dc0452be56812091_anitab-ghc.png&response-content-type=image%2Fpng&AWSAccessKeyId=AKIAJC6CRYNXDRDHQCUQ&Expires=1508631183&Signature=xnIcb5QOWDz5F2CBli6MbNA%2BgLM%3D",
-                name: "GraceHopper",
+                photo: "https://lh3.googleusercontent.com/Yh_DM4yrmSYUP9q6JZUTuXVm2tE-dr9JAPcw8L8aTqH6VIjMwBeHxlsFjWs1HeZwDQ0=w300",
+                name: "GHC",
                 link: "",
                 lastUpdated: timestamp(),
                 items: [
@@ -1353,14 +1354,14 @@ var eventsList = [
             },
             {
                 id: "wsj",
-                photo: "http://www.conferencebites.com/wordpress/wp-content/uploads/2016/10/WSJDLive.png",
-                name: "WSJ",
+                photo: "https://media-s3-us-east-1.ceros.com/wall-street-journal/images/2017/02/08/87cb1cc37921e27e40d95664bda84306/dlive-poster-half.png",
+                name: "WSJ.D",
                 link: "",
                 lastUpdated: timestamp(),
                 items: [
+                    buildItem("starboy-3", "photo", 5, "https://growthhackday.blob.core.windows.net/asset-7707424e-6948-4cd6-80de-890505e87452/wsj-3.jpeg?sv=2015-07-08&sr=c&si=7b478430-4bb6-4526-b331-2f15bae3fffb&sig=Rrw008dMzMibrBzT8%2FFlsnJDf9uKcUUv7yCmdSV32kM%3D&st=2017-10-20T23%3A45%3A14Z&se=2117-10-20T23%3A45%3A14Z", '', false, timestamp()),
                     buildItem("starboy-1", "video", 5, "https://growthhackday.blob.core.windows.net/asset-65c44fb7-403b-481e-be80-7914ab52830d/wsj-1.mp4?sv=2015-07-08&sr=c&si=02419358-f3ca-421a-9f8f-3c347ca35245&sig=ZjgHZ8mau0QPHZNjwu5WjnU53INy%2BpCtTCz1nGOlI1s%3D&st=2017-10-20T23%3A39%3A17Z&se=2117-10-20T23%3A39%3A17Z", '', false, timestamp()),
                     buildItem("starboy-2", "photo", 5, "https://growthhackday.blob.core.windows.net/asset-1fba1c14-6f7b-49db-adb9-8e661ffd2fd8/wsj-2.jpeg?sv=2015-07-08&sr=c&si=b98882e4-9a86-47d3-9cc7-e7053ea56adb&sig=3m%2B2CqEGx%2BYeKfiUlJU9H5hpiUfmaSD%2B%2FyZEmlthgKI%3D&st=2017-10-20T23%3A45%3A20Z&se=2117-10-20T23%3A45%3A20Z", '', false, timestamp()),
-                    buildItem("starboy-3", "photo", 5, "https://growthhackday.blob.core.windows.net/asset-7707424e-6948-4cd6-80de-890505e87452/wsj-3.jpeg?sv=2015-07-08&sr=c&si=7b478430-4bb6-4526-b331-2f15bae3fffb&sig=Rrw008dMzMibrBzT8%2FFlsnJDf9uKcUUv7yCmdSV32kM%3D&st=2017-10-20T23%3A45%3A14Z&se=2117-10-20T23%3A45%3A14Z", '', false, timestamp()),
                     buildItem("starboy-4", "video", 5, "https://growthhackday.blob.core.windows.net/asset-d2bbf65f-bb13-43a8-8c4f-0e6cc97c7860/wsj-4.mp4?sv=2015-07-08&sr=c&si=ce4cbab2-1f82-42d5-897c-97be122cd631&sig=REGt0869VfWehyZfDCk%2BUil7POnE9qieagB4wxSIwro%3D&st=2017-10-20T23%3A45%3A25Z&se=2117-10-20T23%3A45%3A25Z", '', false, timestamp())
 
                 ]
@@ -1387,10 +1388,10 @@ var companiesList = [
                 items: [
                     // Diwali
                     buildItem("ramon-1", "video", 3, "https://growthhackday.blob.core.windows.net/asset-17e8938f-4c65-481a-9595-cc347d6fe905/Snapchat-1340026414.mp4?sv=2015-07-08&sr=c&si=d97d69a6-83ed-48a3-8e15-2e9546503876&sig=Rwfwb34VSV0z6QsnjP7aK37AgITN4oSTS5j3%2BoQSBZU%3D&st=2017-10-20T23%3A29%3A20Z&se=2117-10-20T23%3A29%3A20Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", '', false, timestamp()),
-                    // Cafe
-                    buildItem("ramon-2", "video", 3, "https://growthhackday.blob.core.windows.net/asset-199382af-039a-4324-9016-d88b115ecb85/IMG_0937_1920x1080_6000.mp4?sv=2015-07-08&sr=c&si=8c801a53-4bd1-45f2-bba1-3fb63f8ceb62&sig=7%2FgBD0O6nMEaIzr24wuSLmscbNCD3z6a2J%2FtRZTgTeA%3D&st=2017-10-21T00%3A00%3A56Z&se=2117-10-21T00%3A00%3A56Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", 'https://ramon.codes', false, timestamp()),
                     // Basketball
-                    buildItem("ramon-3", "video", 0, "https://growthhackday.blob.core.windows.net/asset-64a4d24a-4345-48fd-8ae6-ac7477b3d889/IMG_0936_1920x1080_6000.mp4?sv=2015-07-08&sr=c&si=f49d28f9-bd4b-4f18-a6c3-2a1aa63857f9&sig=IMqH2lGPePXJxjTviXugKYe7kf8p%2BhN0gwTw9L1qwgM%3D&st=2017-10-20T23%3A59%3A36Z&se=2117-10-20T23%3A59%3A36Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", '', false, 1504023497)
+                    buildItem("ramon-3", "video", 0, "https://growthhackday.blob.core.windows.net/asset-64a4d24a-4345-48fd-8ae6-ac7477b3d889/IMG_0936_1920x1080_6000.mp4?sv=2015-07-08&sr=c&si=f49d28f9-bd4b-4f18-a6c3-2a1aa63857f9&sig=IMqH2lGPePXJxjTviXugKYe7kf8p%2BhN0gwTw9L1qwgM%3D&st=2017-10-20T23%3A59%3A36Z&se=2117-10-20T23%3A59%3A36Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", '', false, 1504023497),
+                    // Cafe
+                    buildItem("ramon-2", "video", 3, "https://growthhackday.blob.core.windows.net/asset-199382af-039a-4324-9016-d88b115ecb85/IMG_0937_1920x1080_6000.mp4?sv=2015-07-08&sr=c&si=8c801a53-4bd1-45f2-bba1-3fb63f8ceb62&sig=7%2FgBD0O6nMEaIzr24wuSLmscbNCD3z6a2J%2FtRZTgTeA%3D&st=2017-10-21T00%3A00%3A56Z&se=2117-10-21T00%3A00%3A56Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", 'https://ramon.codes', false, timestamp())
                 ]
             },
             {
@@ -1496,43 +1497,41 @@ var trendingList = [
 
 var influencersList = [
             {
-                id: "ramon",
-                photo: "https://avatars1.githubusercontent.com/u/2271175?v=3&s=460",
-                name: "Ramon",
-                link: "https://ramon.codes",
-                lastUpdated: timestamp(),
-                items: [
-                    buildItem("ramon-1", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10810091_1527190460857578_541280638_n.jpg", '', false, timestamp()),
-                    buildItem("ramon-2", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", 'https://ramon.codes', false, timestamp()),
-                    buildItem("ramon-3", "video", 0, "https://growthhackday.blob.core.windows.net/asset-90912b5f-066e-41fb-bdf3-34fbc03842c1/1479932728445-v0ch3x.mp4?sv=2015-07-08&sr=c&si=bbe1f495-08a0-4a58-8010-4026c67cb264&sig=or22AYoxe1aX1WMMYsked%2FY8%2FrDKexEZQpacNcyjAeE%3D&st=2017-10-20T21%3A10%3A21Z&se=2117-10-20T21%3A10%3A21Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", '', false, 1504023497)
-                ]
-            },
-            {
-                id: "gorillaz",
-                photo: "https://lh3.googleusercontent.com/xYFz6B9FHMQq7fDOI_MA61gf0sNdzGBbdR7-mZ7i4rEVvE_N-kZEY_A4eP74Imcf8Sq3FYxAgd4eJA=w200",
-                name: "Gorillaz",
-                link: "",
-                lastUpdated: timestamp(),
-                items: [
-                    buildItem("gorillaz-1", "video", 0, "https://instagram.frao1-1.fna.fbcdn.net/t50.2886-16/17886251_1128605603951544_572796556789415936_n.mp4", "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
-                    buildItem("gorillaz-2", "photo", 3, "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:large","https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
-                ]
-            },
-            {
                 id: "ladygaga",
-                photo: "https://lh3.googleusercontent.com/VkANYSL1HOzINPSnzBJRM879b302ShsRwLoKD7mLezgTLvlpHPm_dIVop7mkAQfepze6O5N8rw8l4yM=w200",
-                name: "Lady Gaga",
+                photo: "https://pbs.twimg.com/profile_images/500480798886084611/P5XUPlTJ_400x400.jpeg",
+                name: "Jeff Weiner",
                 link: "",
                 lastUpdated: timestamp(),
                 items: [
                     buildItem("ladygaga-1", "photo", 5, "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:large", "https://pbs.twimg.com/media/C8mtrEMXcAA9KKM.jpg:small", '', false, timestamp()),
                     buildItem("ladygaga-2", "photo", 3, "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:large", "https://pbs.twimg.com/media/C4t_bxcXAAE3Hwb.jpg:small", 'http://ladygaga.com', false, timestamp()),
                 ]
+            },  
+            {
+                id: "qotsa",
+                photo: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/5/000/1bd/26f/349c10e.jpg",
+                name: "Reid Hoffman",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("qotsa-1", "photo", 10, "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:large", "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:small", '', false, timestamp())
+                ]
+            },
+            {
+                id: "gorillaz",
+                photo: "https://centers.fuqua.duke.edu/cole/wp-content/uploads/sites/8/2015/03/Krzyzewski-Mike-2011-12.jpg",
+                name: "Mike Krzyzewski",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                    buildItem("gorillaz-1", "video", 0, "https://growthhackday.blob.core.windows.net/asset-07dee1f9-4caf-4bd9-a416-1826657ccf0e/Mike 1.mp4?sv=2015-07-08&sr=c&si=f1325d4d-77f1-4248-bbb5-f7e8375095e2&sig=5HYjhFddEt9rPqWJorg0To5EemZkRKezxDjPAptZMRM%3D&st=2017-10-21T00%3A19%3A26Z&se=2117-10-21T00%3A19%3A26Z", "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                    buildItem("gorillaz-2", "photo", 3, "https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:large","https://pbs.twimg.com/media/C8VgMQ8WAAE5i9M.jpg:small", '', false, timestamp()),
+                ]
             },
             {
                 id: "starboy",
-                photo: "https://lh3.googleusercontent.com/nMxfllzaAmaCCZJEMiKe2EARjyUNItQ-mdgAq6he-LWXwkIWbiiBIHyC3rGiqDu6fgyVK6NnjcgueA=w200",
-                name: "The Weeknd",
+                photo: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAIA_wDGAAAAAQAAAAAAAA1XAAAAJDI0ZmU1NmEyLTMxNzgtNDY0NS1hMThlLWJkNzE4YWViYTVlYw.jpg",
+                name: "Satya Nadella",
                 link: "",
                 lastUpdated: timestamp(),
                 items: [
@@ -1540,13 +1539,15 @@ var influencersList = [
                 ]
             },
             {
-                id: "qotsa",
-                photo: "https://lh3.googleusercontent.com/nE4grkY8s88P_1mFFA06mGCNshhqtIz4C4y2dV7AZbm0360zopRKDMCYtUHR0uQR2DAfYMRZdA=s180-p-e100-rwu-v1",
-                name: "QOTSA",
-                link: "",
+                id: "ramon",
+                photo: "https://pbs.twimg.com/profile_images/889736688624312321/xVAFH9ZH_400x400.jpg",
+                name: "Bill Gates",
+                link: "https://ramon.codes",
                 lastUpdated: timestamp(),
                 items: [
-                    buildItem("qotsa-1", "photo", 10, "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:large", "https://pbs.twimg.com/media/C8wTxgUVoAALPGA.jpg:small", '', false, timestamp())
+                    buildItem("ramon-1", "video", 3, "https://growthhackday.blob.core.windows.net/asset-86a66a41-93bd-46b6-8486-3e7ce0def0a5/Bill gates 1.mp4?sv=2015-07-08&sr=c&si=b73127bc-6796-4543-ad7d-ec9cc174291d&sig=7iDcmapFvVO5DP8pDBpFa3tcvmvLRunoNf4mQEu4Iww%3D&st=2017-10-21T00%3A19%3A46Z&se=2117-10-21T00%3A19%3A46Z", '', false, timestamp()),
+                    buildItem("ramon-2", "photo", 3, "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", 'https://ramon.codes', false, timestamp()),
+                    buildItem("ramon-3", "video", 0, "https://growthhackday.blob.core.windows.net/asset-90912b5f-066e-41fb-bdf3-34fbc03842c1/1479932728445-v0ch3x.mp4?sv=2015-07-08&sr=c&si=bbe1f495-08a0-4a58-8010-4026c67cb264&sig=or22AYoxe1aX1WMMYsked%2FY8%2FrDKexEZQpacNcyjAeE%3D&st=2017-10-20T21%3A10%3A21Z&se=2117-10-20T21%3A10%3A21Z", "https://scontent-gru2-2.cdninstagram.com/t51.2885-15/e15/10597412_455246124639813_1360162248_n.jpg", '', false, 1504023497)
                 ]
             }
         ]
@@ -1680,7 +1681,7 @@ async function demo() {
     appendToFeed(4, "Companies", "Company cultures that you might be interested in");
     initDemo(4, companiesList);
     await sleep(5000);
-    appendToFeed(7, "Influencers", "Learn from the best how to grow your career");
+    appendToFeed(7, "Influencers", "See what these INfluencers are up to. Be Inspired.");
 	initDemo(7, influencersList);
     console.log('second');
     await sleep(5000);
